@@ -7,4 +7,4 @@ views implemented aside from the main page (application.html).
 
 Initialize the database using rake db:create.
 
-It is live on the web at [to be added].
+This can only be run on localhost:3000 currently.
