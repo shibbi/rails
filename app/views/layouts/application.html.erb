@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MusicApp</title>
+  <%= csrf_meta_tags %>
+  <%= flash[:notice] if flash[:notice] %>
+  <%= render 'shared/errors' %>
+  <%= render 'shared/logout' if current_user %>
+</head>
+<body>
+
+<%= yield %>
+
+</body>
+</html>
