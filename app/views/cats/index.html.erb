@@ -1,10 +1,12 @@
 <h1>All Cats</h1>
 
-<ul>
-<% @cats.sort { |a, b| a.id <=> b.id }.each do |cat| %>
-  <li><%= link_to cat.name, cat_url(cat) %></li>
-<% end %>
-</ul>
+<table>
+  <% @cats.sort { |a, b| a.id <=> b.id }.each do |cat| %>
+    <tr>
+      <td><%= link_to cat.name, cat_url(cat) %></td>
+    </tr>
+  <% end %>
+</table>
 
 <p><%= link_to 'Make a new cat', new_cat_url %></p>
 
