@@ -1,0 +1,15 @@
+<h1>Edit <%= @album.title %></h1>
+
+<form action='<%= album_path(@album) %>' method='post'>
+  <label>Title: <input type='text' name='album[title]'></label>
+  <br/>
+  <label>
+    Type:
+    <input type='radio' name='album[kind]' value='studio'> Studio
+    <input type='radio' name='album[kind]' value='live'> Live
+  </label>
+  <br/>
+  <input type='hidden' name='album[band_id]' value='<%=params[:band_id]%>'>
+  <%= button_to 'Create album', albums_path %>
+  <br/>
+</form>

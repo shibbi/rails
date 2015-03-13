@@ -1,0 +1,20 @@
+<h1><%= @track.title %></h1>
+
+<p>
+  <h3>Lyrics</h3>
+  <% if @track.lyrics %>
+    <% @track.lyrics.split("\n").each do |line| %>
+      <%= line %><br/>
+    <% end %>
+  <% end %>
+</p>
+
+<p>
+  <%= link_to 'Edit track', edit_track_path(@track)%>
+  <br/>
+  <%= link_to 'Delete track', track_path(@track), method: :delete,
+                              data: { confirm: 'Are you sure?' } %>
+</p>
+
+<% album = @track.album %>
+<p><%= link_to "Back to #{album.title}", album_path(album) %></p>

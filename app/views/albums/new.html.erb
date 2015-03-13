@@ -1,0 +1,15 @@
+<h1>Create a new album</h1>
+
+<form action='<%= albums_path %>' method='post'>
+  <label>Title: <input type='text' name='album[title]'></label>
+  <br/>
+  <label>
+    Type:
+    <input type='radio' name='album[kind]' value='studio'> Studio
+    <input type='radio' name='album[kind]' value='live'> Live
+  </label>
+  <br/>
+  <input type='hidden' name='album[band_id]' value='<%=params[:band_id]%>'>
+  <%= button_to 'Create album', albums_path %>
+  <br/>
+</form>
