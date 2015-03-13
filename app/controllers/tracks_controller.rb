@@ -5,7 +5,7 @@ class TracksController < ApplicationController
     @track = Track.new(track_params)
     if @track.save
       flash[:notice] = 'Succesfully created track!'
-      redirect_to track_path(@track)
+      redirect_to album_path(@track.album)
     else
       flash[:errors] = @track.errors.full_messages
       render :new
@@ -24,15 +24,20 @@ class TracksController < ApplicationController
     end
   end
 
+  def edit
+    @track = Track.find(params[:id])
+    render :edit
+  end
+
   def update
     @track = Track.find(params[:id])
     if @track.update(track_params)
       flash[:notice] = 'Succesfully updated track!'
+      redirect_to track_path(@track)
     else
       flash[:errors] = @track.errors.full_messages
+      edit
     end
-
-    redirect_to track_path(@track)
   end
 
   def destroy
@@ -41,6 +46,6 @@ class TracksController < ApplicationController
   private
 
   def track_params
-    params.require(:track).permit(:title, :kind)
+    params.require(:track).permit(:title, :kind, :album_id)
   end
 end

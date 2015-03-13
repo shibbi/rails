@@ -29,19 +29,25 @@ class BandsController < ApplicationController
     end
   end
 
+  def edit
+    @band = Band.find(params[:id])
+    render :edit
+  end
+
   def update
     @band = Band.find(params[:id])
     if @band.update(band_params)
       flash[:notice] = 'Succesfully updated band!'
+      redirect_to band_path(@band)
     else
       flash[:errors] = @band.errors.full_messages
+      edit
     end
-
-    redirect_to band_path(@band)
   end
 
   def destroy
-    band = Band.find(params[:id])
+    band_id = params[:id]
+    band = Band.find(band_id)
     if Band.destroy(band)
       flash[:notice] = "Successfully deleted band #{band.name}"
     else

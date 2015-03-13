@@ -1,0 +1,20 @@
+<h1>Edit <%= @track.title %></h1>
+
+<form action='<%= track_path(@track) %>' method='post'>
+  <input type='hidden' name='_method' value='patch' >
+  <label>Title: <input type='text' name='track[title]'
+                                   value='<%= @track.title %>'></label>
+  <br/>
+  <label>
+    Type:
+    <input type='radio' name='track[kind]' value='regular'
+           <%= 'checked' if @track.kind == 'regular' %>> Regular
+    <input type='radio' name='track[kind]' value='bonus'
+           <%= 'checked' if @track.kind == 'bonus' %>> Bonus
+  </label>
+  <br/>
+  <input type='hidden' name='track[album_id]'
+                       value='<%= @track.album_id %>'>
+  <%= button_to 'Edit track', track_path(@track) %>
+  <br/>
+</form>

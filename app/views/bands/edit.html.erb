@@ -1,1 +1,10 @@
-<h1>Edit <%= band.name %></h1>
+<h1>Edit <%= @band.name %></h1>
+
+<form action='<%= band_path(@band) %>' method='post'>
+  <input type='hidden' name='_method' value='patch' >
+  <label>Name: <input type='text' name='band[name]'
+                                   value='<%= @band.name %>'></label>
+  <br/>
+  <%= button_to 'Edit band', band_path(@band) %>
+  <br/>
+</form>

@@ -1,12 +1,5 @@
 <h1><%= @album.title %></h1>
 
-<p>
-  <%= link_to 'Edit album', edit_album_path(@album)%>
-  <br/>
-  <%= link_to 'Delete album', album_path(@album), method: :delete,
-                              data: { confirm: 'Are you sure?' } %>
-</p>
-
 <p><h3>Tracks:</h3>
   <ol>
     <% @album.tracks.sort { |a, b| a.id <=> b.id }.each do |track| %>
@@ -14,6 +7,13 @@
     <% end %>
   </ol>
   <%= link_to 'Create a new track', new_album_track_path(@album) %>
+</p>
+
+<p>
+  <%= link_to 'Edit album', edit_album_path(@album)%>
+  <br/>
+  <%= link_to 'Delete album', album_path(@album), method: :delete,
+                              data: { confirm: 'Are you sure?' } %>
 </p>
 
 <% band = @album.band %>
