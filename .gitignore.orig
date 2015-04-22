@@ -13,7 +13,7 @@
 /db/*.sqlite3-journal
 
 =======
->>>>>>> fe1d987f896b56fcc704c4f8ddbc8ea240f24087
+>>>>>>> 8922529f155b4361ad2654a9435acca79c75a075
 # Ignore all logfiles and tempfiles.
 /log/*
 !/log/.keep
