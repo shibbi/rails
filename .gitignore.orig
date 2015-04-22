@@ -7,13 +7,14 @@
 # Ignore bundler config.
 /.bundle
 
+<<<<<<< HEAD
+=======
+# Ignore the default SQLite database.
+/db/*.sqlite3
+/db/*.sqlite3-journal
+
+>>>>>>> 425b52d7eff4c6441e5690a7623113bdbe3a2151
 # Ignore all logfiles and tempfiles.
 /log/*
 !/log/.keep
 /tmp
-<<<<<<< HEAD
-
-~*
-**/.DS_Store
-=======
->>>>>>> 5e16bf1f0ee08b3239f2d4a0da7d1e4d90dc4c2f
