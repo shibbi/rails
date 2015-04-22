@@ -1,0 +1,7 @@
+== README
+
+This is a simple Rails app that keeps track of polls and users.
+
+A user can create a poll and respond to a poll.
+A user cannot respond to the poll he or she created.
+A user cannot respond to the same question twice.
