@@ -1,0 +1,20 @@
+<h1>Edit <%= @album.title %></h1>
+
+<form action='<%= album_path(@album) %>' method='post'>
+  <input type='hidden' name='_method' value='patch' >
+  <label>Title: <input type='text' name='album[title]'
+                                   value='<%= @album.title %>'></label>
+  <br/>
+  <label>
+    Type:
+    <input type='radio' name='album[kind]' value='studio'
+           <%= 'checked' if @album.kind == 'studio' %>> Studio
+    <input type='radio' name='album[kind]' value='live'
+           <%= 'checked' if @album.kind == 'live' %>> Live
+  </label>
+  <br/>
+  <input type='hidden' name='album[band_id]'
+                       value='<%= @album.band_id %>'>
+  <%= button_to 'Edit album', album_path(@album) %>
+  <br/>
+</form>

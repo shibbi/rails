@@ -1,0 +1,8 @@
+<h1>Create a new band</h1>
+
+<form action='<%= bands_path %>' method='post'>
+  <label>Name: <input type='text' name='band[name]'></label>
+  <br/>
+  <%= button_to 'Create band', bands_path %>
+  <br/>
+</form>

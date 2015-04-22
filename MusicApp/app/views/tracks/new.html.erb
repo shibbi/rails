@@ -1,0 +1,16 @@
+<h1>Create a new track</h1>
+
+<form action='<%= tracks_path %>' method='post'>
+  <label>Title: <input type='text' name='track[title]'></label>
+  <br/>
+  <label>
+    Type:
+    <input type='radio' name='track[kind]' value='regular'> Regular
+    <input type='radio' name='track[kind]' value='bonus'> Bonus
+  </label>
+  <br/>
+  <input type='hidden' name='track[album_id]'
+                       value='<%=params[:album_id]%>'>
+  <%= button_to 'Create track', tracks_path %>
+  <br/>
+</form>

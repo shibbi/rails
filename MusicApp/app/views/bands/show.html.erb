@@ -1,0 +1,19 @@
+<h1><%= @band.name %></h1>
+
+<p><h3>Albums:</h3>
+  <ul>
+    <% @band.albums.sort { |a, b| a.id <=> b.id }.each do |album| %>
+    <li><%= link_to album.title, album_path(album) %></li>
+    <% end %>
+  </ul>
+  <%= link_to 'Create a new album', new_band_album_path(@band) %>
+</p>
+
+<p>
+  <%= link_to 'Edit band', edit_band_path(@band)%>
+  <br/>
+  <%= link_to 'Delete band', band_path(@band), method: :delete,
+                              data: { confirm: 'Are you sure?' } %>
+</p>
+
+<p><%= link_to 'Back to All Bands', bands_path %></p>

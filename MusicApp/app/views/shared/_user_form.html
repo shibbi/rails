@@ -1,0 +1,13 @@
+<h1><%= title %></h1>
+
+<form action='<%= action %>' method='post' %>
+  <label>
+    Username (email): <input type='text' name='<%= option %>[email]'>
+  </label>
+  <br>
+  <label>
+    Password: <input type='password' name='<%= option %>[password]'>
+  </label>
+  <br>
+  <%= button_to title, action %>
+</form>
